@@ -3,7 +3,7 @@ let mic;
 function setup() {
   // Create fullscreen canvas
   let canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent('overlay');
+  // canvas.parent('overlay');
   
   // Create microphone input
   mic = new p5.AudioIn();
