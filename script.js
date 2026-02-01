@@ -26,7 +26,7 @@ const csvData = [
     "seeing as a way of understanding our minds cognition and understanding our selves",
     "recreational misery",
     "cognitive reappraisal",
-    "the human condtiion talking about weather",
+    "the human condition is perpetually talking about the weather",
     "the ferment of young adult life",
     "the glossiness of a new leaf",
     "the shiny feeling of something new",
