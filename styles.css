@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*ABBY: wrong background color, modifying on my own*/
+/*ABBY: I like the look of a more condensed font, changing that too.*/
+body {
+    font-family: 'Helvetica', sans-serif, semi-expanded;
+    background-color: #000B00;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/*ABBY: audio viz code*/
+/* Full-screen overlay for audio visualization */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 999;
+}
+
+#overlay canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Hide p5.js loading text */
+#overlay p {
+    display: none !important;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+/*ABBY: changing text color to white throughout*/
+.active-button {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: 'Arial Narrow', Arial Narrow, monospace;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: opacity 0.3s;
+}
+
+/*ABBY: modifying active button*/
+.active-button.inactive {
+    color: #666666;
+    cursor: default;
+}
+
+/*ABBY: making sure the color is correct when inactive*/
+.active-button.inactive .symbol {
+    color: #ff0000;
+}
+
+.active-button.inactive:hover {
+    opacity: 1;
+}
+
+.active-button:hover {
+    opacity: 0.7;
+}
+
+/*ABBY: code automatically made button all green, changing the asterisk to be specifically green*/
+/*ABBY: also the position/size is not where I want it. Pushing pixels.*/ 
+.symbol {
+    font-weight: bold;
+    margin-right: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #00ff00;
+}
+
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin-left: 60px;
+}
+
+.message {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 8px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+/*ABBY: this is code for stylizing the hyperlinks*/
+.message a {
+    color: #f56949; /*A nice blood orange color*/
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.message a:hover {
+    color: #f56949;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.typing-indicator {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 8px 0;
+}
+
+.typing-indicator::after {
+    content: '...';
+    animation: ellipsis 1.5s infinite;
+}
+
+@keyframes ellipsis {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #f5f5f5;
+    color: #000B00;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.modal-content h2 {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.modal-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.modal-content .date-range {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .messages-container {
+        margin-left: 20px;
+    }
+    
+    .modal-content {
+        padding: 30px;
+    }
+}
