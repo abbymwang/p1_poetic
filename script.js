@@ -165,9 +165,10 @@ function activateButton() {
     status.textContent = 'Active';
 
     // Initialize microphone when button becomes active
-    initializeMicrophone();
+    //initializeMicrophone();
 }
 
+/*
 // Initialize microphone connection
 async function initializeMicrophone() {
     try {
@@ -248,6 +249,7 @@ function stopMicrophone() {
 window.addEventListener('beforeunload', () => {
     stopMicrophone();
 });
+*/
 
 // Display the next message with typing indicator
 function displayNextMessage() {
@@ -353,7 +355,7 @@ document.addEventListener('keydown', (e) => {
 init();
 
 
-
+/*
 // ============================================
 // P5.JS AUDIO VISUALIZATION
 // ============================================
@@ -387,7 +389,7 @@ function draw() {
   
   // Map volume to opacity (0-255)
   // Multiply by a factor to increase sensitivity
-  let opacity = vol * 255 * 10;
+  let opacity = vol * 255 * 50;
   
   // Draw black rectangle over entire screen
   fill(0, 0, 0, opacity);
@@ -399,3 +401,4 @@ function draw() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+*/
