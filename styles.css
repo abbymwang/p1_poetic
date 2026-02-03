@@ -33,11 +33,6 @@ body {
     height: 100% !important;
 }
 
-/* Hide p5.js loading text */
-#overlay p {
-    display: none !important;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -115,6 +110,7 @@ body {
     transition: color 0.3s;
 }
 
+/*ABBY: Claude code below*/
 .message a:hover {
     color: #f56949;
     text-decoration: none;

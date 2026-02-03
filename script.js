@@ -1,11 +1,9 @@
 // Each line represents one message
 const csvData = [
-    "https://substack.com/@gorecore/note/c-206510003",
     "https://www.poetryfoundation.org/poetrymagazine/poems/1682838/jenny-holzer-dying-should-be-as-easy-as-falling-off-a-log-1978",
     "always in limbo",
     "never want to be here there anywhere until im elsewhere",
     "bird w/ clipped wings",
-    "https://www.instagram.com/p/DUGVJaEjYuR",
     "Nutmeg chocolate chip espresso banana bread almond powder? With espresso cream fraiche whip",
     "working in the biomedical field you must live under the assumption that people are generally good and deserve saving",
     "come and see whats playing in the theater of life these days",
@@ -19,7 +17,6 @@ const csvData = [
     "How do you respond when things go wrong under pressure?",
     "How do you handle stress?",
     "Autumnal Arroz Caldo - by Chuck Cruz - Chuck.pdf",
-    "https://www.yelp.com/biz/loop-espresso-club-los-angeles",
     "turning around at the airport tarmac",
     "arms forever outstretched to reach you",
     "\"friction (pain, hardship, bad weather) is necessary for life\"",
@@ -30,9 +27,7 @@ const csvData = [
     "the ferment of young adult life",
     "the glossiness of a new leaf",
     "the shiny feeling of something new",
-    "https://www.instagram.com/katiethejane/reel/DOtmtPmDh0c/",
     "https://www.instagram.com/p/DRRRwHOkq_A/",
-    "https://x.com/mrp_and_me/status/1993891371401531716",
     "The skyscrapers winking at you in orange bursts from the sun",
     "dont wait for things to come to you go find them and pursue it strongly",
     "Only development and aging are absolute. Everything else that happens in between is subject to choice",
@@ -49,7 +44,6 @@ const csvData = [
     "Proof of flu vaccine",
     "ID",
     "osmanthus in the air",
-    "https://www.justonecookbook.com/matcha-swiss-roll/",
     "\"what style of cuisine is your restaurant going to serve\"",
     "Things I need to do: Take media out. Move media in. Run pcr. Run gel. Analyze gel",
     "sour on the lips sweet on the stomach",
@@ -65,7 +59,6 @@ const csvData = [
     "3 g matcha 30-40 ml water",
     "https://www.nature.com/articles/nature11234",
     "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7312636/",
-    "https://www.youtube.com/watch?v=k6LyV7A6UmU",
     "CHEM 3BL Lab J.pdf",
     "def inspect_place(place, place_index)",
     "Adobe Acrobat - Adobe Scan Aug 24, 2023.pdf",
@@ -83,7 +76,7 @@ const csvData = [
     "7. Have you ever had a conversation that changed your life?"
 ];
 
-//ABBY: old code, using a non-randomized display function for the messages
+//ABBY: Claude old code, using a non-randomized display function for the messages
 
 /*
 let currentMessageIndex = 0;
@@ -140,7 +133,7 @@ function shuffleArray(array) {
     return shuffled;
 }
 
-//ABBY: code to make the active button active vs. inactive
+//ABBY: Claude code to make the active button active vs. inactive
 // Initialize the display
 function init() {
     // Shuffle the messages at the start
@@ -353,52 +346,3 @@ document.addEventListener('keydown', (e) => {
 
 // Start the application
 init();
-
-
-/*
-// ============================================
-// P5.JS AUDIO VISUALIZATION
-// ============================================
-
-let mic;
-let p5Canvas;
-
-// p5.js setup function
-function setup() {
-  // Create fullscreen canvas
-  p5Canvas = createCanvas(windowWidth, windowHeight);
-  
-  // Append to overlay div manually
-  let overlayDiv = document.getElementById('overlay');
-  if (overlayDiv) {
-    overlayDiv.appendChild(p5Canvas.canvas);
-  }
-  
-  // Create microphone input
-  mic = new p5.AudioIn();
-  mic.start();
-}
-
-// p5.js draw function
-function draw() {
-  // Clear previous frame
-  clear();
-  
-  // Get microphone volume level (0.0 to 1.0)
-  let vol = mic.getLevel();
-  
-  // Map volume to opacity (0-255)
-  // Multiply by a factor to increase sensitivity
-  let opacity = vol * 255 * 50;
-  
-  // Draw black rectangle over entire screen
-  fill(0, 0, 0, opacity);
-  noStroke();
-  rect(0, 0, width, height);
-}
-
-// p5.js window resize function
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
-*/
