@@ -1,3 +1,11 @@
+
+/*notes from self
+Author: Abby Wang
+Date: February 6, 2026
+Description: Code--that theoretically works--for mic integration to 
+change ~brightness~ of screen according to environment sound. Only on p5.js.
+*/
+
 let mic;
 
 //Source: p5.js (https://editor.p5js.org/amcc/sketches/Jtg4GaAG0), Claude
@@ -11,16 +19,15 @@ function setup() {
 function draw() {
   clear();
   
-  // Get microphone volume level (0.0 to 1.0)
+  // Get mic volume level
   let vol = mic.getLevel();
   
-  // Map volume to opacity (0-255)
-  // Multiply by a factor to increase sensitivity
+  // Let's map volume to oopacy
+  // Increase sensitivity for volume
   let opacity = vol * 255 * 10;
   
-  // Draw black rectangle over entire screen
+  // Draw overlay
   fill(0, 0, 0, opacity);
-  noStroke();
   rect(0, 0, width, height);
 }
 
